@@ -34,13 +34,13 @@ blurView.intensity = 0.5
 
 ## JPBlurAnimationView
 
-`JPBlurAnimationView` inherits from `JPBlurView`, allows for animated modifications of the blur intensity. It internally relies on the pop library, enabling animated modifications of the blur intensity for a smoother transition effect.
+`JPBlurAnimationView` inherits from `JPBlurView`, allows for animated modifications of the blur intensity. It internally relies on the [pop](https://github.com/facebookarchive/pop), enabling animated modifications of the blur intensity for a smoother transition effect.
 
 The achieved effect looks like this:
 
 ![JPBlurAnimationView_1.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurAnimationView_1.gif)
 
-Using JPBlurAnimationView is equally straightforward. Here's the code:
+Using `JPBlurAnimationView` is equally straightforward. Here's the code:
 ```swift
 let blurView = JPBlurAnimationView(effectStyle: .systemThinMaterialDark)
 
