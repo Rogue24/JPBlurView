@@ -1,6 +1,7 @@
 # JPBlurView & JPBlurAnimationView
 
-`JPBlurView` is a `UIView` with a blur effect and customizable blur intensity. Internally, `JPBlurAnimationView` inherits from `JPBlurView`, allows for animated modifications of the blur intensity.
+- `JPBlurView` is a `UIView` with a blur effect and customizable blur intensity. 
+- `JPBlurAnimationView` inherits from `JPBlurView`, allows for animated modifications of the blur intensity.
 
 ![JPBlurAnimationView_2.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurAnimationView_2.gif)
 
