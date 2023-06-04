@@ -23,6 +23,7 @@ blurView.intensity = 0.5
 - The `intensity` property ranges from 0 to 1, representing 0% to 100% blur intensity.
 
 The achieved effect looks like this:
+
 ![JPBlurView_1.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurView_1.gif)
 
 `JPBlurView` allows complete customization of the blur intensity and addresses the issue of becoming ineffective when entering the background mode. If you want to modify the blur intensity with animation effects, you can use `JPBlurAnimationView`.
@@ -51,6 +52,7 @@ The animation implementation utilizes a combination of `POPBasicAnimation` and `
 The animation effect will only be applied if the `duration` is greater than 0 and the `from` and `to` values are not equal. In this case, when the duration is positive and the starting and target blur intensities are different, the animation will be triggered, resulting in a smooth transition between the two blur intensity values.
 
 The achieved effect looks like this:
+
 ![JPBlurAnimationView_1.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurAnimationView_1.gif)
 
 Additionally, you can make use of this convenient API:
@@ -70,6 +72,7 @@ blurView.stopAnimation()
 ```
 
 By using `JPBlurAnimationView`, you can achieve interactive and animated transition effects, such as closing an image with a gesture:
+
 ![JPBlurAnimationView_2.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurAnimationView_2.gif)
 
 ## Installation
