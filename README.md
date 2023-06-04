@@ -1,8 +1,16 @@
 # JPBlurView & JPBlurAnimationView
 
+`JPBlurView` is a `UIView` with a blur effect and customizable blur intensity. Internally, `JPBlurAnimationView` inherits from `JPBlurView`, allows for animated modifications of the blur intensity.
+
+![JPBlurAnimationView_2.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurAnimationView_2.gif)
+
 ## JPBlurView
 
 `JPBlurView` is a `UIView` with a blur effect and customizable blur intensity. Internally, `JPBlurView` encapsulates `UIVisualEffectView` to achieve the frosted glass effect, and utilizes `UIViewPropertyAnimator` to implement custom blur intensity.
+
+The achieved effect looks like this:
+
+![JPBlurView_1.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurView_1.gif)
 
 It is very easy to use, the code is as follows:
 ```swift
@@ -22,15 +30,15 @@ blurView.intensity = 0.5
 - The `intensity` has a default initial value of 1, but you can pass a custom value to it in the constructor method.
 - The `intensity` property ranges from 0 to 1, representing 0% to 100% blur intensity.
 
-The achieved effect looks like this:
-
-![JPBlurView_1.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurView_1.gif)
-
 `JPBlurView` allows complete customization of the blur intensity and addresses the issue of becoming ineffective when entering the background mode. If you want to modify the blur intensity with animation effects, you can use `JPBlurAnimationView`.
 
 ## JPBlurAnimationView
 
 `JPBlurAnimationView` inherits from `JPBlurView`, allows for animated modifications of the blur intensity. It internally relies on the pop library, enabling animated modifications of the blur intensity for a smoother transition effect.
+
+The achieved effect looks like this:
+
+![JPBlurAnimationView_1.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurAnimationView_1.gif)
 
 Using JPBlurAnimationView is equally straightforward. Here's the code:
 ```swift
@@ -51,19 +59,15 @@ The animation implementation utilizes a combination of `POPBasicAnimation` and `
 
 The animation effect will only be applied if the `duration` is greater than 0 and the `from` and `to` values are not equal. In this case, when the duration is positive and the starting and target blur intensities are different, the animation will be triggered, resulting in a smooth transition between the two blur intensity values.
 
-The achieved effect looks like this:
-
-![JPBlurAnimationView_1.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurAnimationView_1.gif)
-
 Additionally, you can make use of this convenient API:
 ```swift
 blurView.setIntensity(0.5, animated: true)
 
 /// The equivalent to the above API would be:
-/// `blurView.setIntensity(from: nil, to: 0.5, duration: 0.3, timingFunctionName: nil)`
+// `blurView.setIntensity(from: nil, to: 0.5, duration: 0.3, timingFunctionName: nil)`
 
 /// If the animated parameter is set to false, then it is equivalent to:
-/// `blurView.intensity = 0.5`
+// `blurView.intensity = 0.5`
 ```
 
 During the animation process, you can use the `stopAnimation` method to stop the animation. At the point when the animation is stopped, the blur intensity will be set to the value it had when the animation was stopped.
