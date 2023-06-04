@@ -74,7 +74,7 @@
 		1A34C68A2A2CBF4900757CF9 /* girl_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl_3.jpg; sourceTree = "<group>"; };
 		1A34C68B2A2CBF4900757CF9 /* girl_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl_2.jpg; sourceTree = "<group>"; };
 		1A34C6A42A2CC64700757CF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		1A34C6A52A2CC64700757CF9 /* JPBlurView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = JPBlurView.podspec; path = ../JPBlurView.podspec; sourceTree = "<group>"; };
+		1A34C6A52A2CC64700757CF9 /* JPBlurView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = JPBlurView.podspec; path = ../JPBlurView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4FD5B6C747D2143D3A81B7CB /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		98D8EA21982398D5E7A45DF0 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F7083DCB7FD081C46B3598 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };

@@ -75,12 +75,15 @@ private extension JPBlurAnimationView {
 // MARK: - 私有类
 private extension JPBlurAnimationView {
     class AnimationExecutor: NSObject {
+        static let animKey = "JPAnimation"
+        static let propKey = "JPProperty"
+        
         func start(fromValue: CGFloat,
                    toValue: CGFloat,
                    duration: TimeInterval,
                    timingFunctionName: CAMediaTimingFunctionName?,
                    valueDidChangedHandler: @escaping (_ value: CGFloat) -> Void) {
-            pop_removeAnimation(forKey: "JPAnimation")
+            pop_removeAnimation(forKey: Self.animKey)
             
             guard duration > 0, fromValue != toValue else {
                 valueDidChangedHandler(toValue)
@@ -95,7 +98,7 @@ private extension JPBlurAnimationView {
                 animation.timingFunction = CAMediaTimingFunction(name: timingFunctionName)
             }
             
-            animation.property = POPAnimatableProperty.property(withName: "JPProperty") { prop in
+            animation.property = POPAnimatableProperty.property(withName: Self.propKey) { prop in
                 prop?.writeBlock = { (_, values) in
                     guard let values = values else { return }
                     let value = values[0]
@@ -103,12 +106,12 @@ private extension JPBlurAnimationView {
                 }
             } as? POPAnimatableProperty
             
-            pop_add(animation, forKey: "JPAnimation")
+            pop_add(animation, forKey: Self.animKey)
         }
         
         func stop() -> CGFloat? {
-            let animation = pop_animation(forKey: "JPAnimation") as? POPBasicAnimation
-            pop_removeAnimation(forKey: "JPAnimation")
+            let animation = pop_animation(forKey: Self.animKey) as? POPBasicAnimation
+            pop_removeAnimation(forKey: Self.animKey)
             return animation?.toValue as? CGFloat
         }
         
