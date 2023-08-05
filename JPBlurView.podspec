@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JPBlurView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'JPBlurView is a UIView with a blur effect and customizable blur intensity.'
 
   s.description      = <<-DESC

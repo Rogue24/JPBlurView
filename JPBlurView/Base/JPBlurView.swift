@@ -41,7 +41,7 @@ public class JPBlurView: UIView {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        // 如果有【没有开启】或【还没结束】的动画，必须在退出页面时让动画结束，否则会崩溃！
+        // 📢 如果有【没有开启】或【还没结束】的动画，必须在退出页面时让动画结束，否则会崩溃！
         animator.stopAnimation(true)
 //        print("BlurView deinit")
     }
@@ -49,8 +49,17 @@ public class JPBlurView: UIView {
 
 // MARK: - 监听通知
 private extension JPBlurView {
+    /// App即将进入前台
+    ///
+    /// `iOS11之前`：App一旦进入后台模式，`animator`就会失效（挂起时不会）。
+    /// - `state`会变为`inactive`
+    /// - 解决方案：返回前台时重置`animator`。
+    ///
+    /// `iOS11之后`：设置`animator.pausesOnCompletion = true`，`animator`不会失效。
+    /// - `state`保持为`active`
+    /// - 不再需要重置`animator`。
+    ///
     @objc func willEnterForegroundHandle() {
-        // App一旦进入后台模式animator就会失效（挂起时不会），返回前台时重新设置一下
         guard animator.state != .active else { return }
         animator.stopAnimation(true)
         resetAnimator()
@@ -76,6 +85,11 @@ private extension JPBlurView {
         animator = UIViewPropertyAnimator(duration: 0, curve: .linear, animations: { [weak self] in
             self?.effectView.effect = self?.effect
         })
+        if #available(iOS 11.0, *) {
+            // 设置`animator`在完成时自动暂停而不是转换到非活动状态
+            // 可以防止动画结束后被清理（App进入后台模式时会清理）
+            animator.pausesOnCompletion = true
+        }
         animator.fractionComplete = intensity
     }
 }
