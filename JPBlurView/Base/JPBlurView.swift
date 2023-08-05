@@ -51,13 +51,15 @@ public class JPBlurView: UIView {
 private extension JPBlurView {
     /// App即将进入前台
     ///
-    /// `iOS11之前`：App一旦进入后台模式，`animator`就会失效（挂起时不会）。
+    /// `iOS11之前`
+    /// - App一旦进入后台模式，`animator`就会失效（挂起时不会）
     /// - `state`会变为`inactive`
-    /// - 解决方案：返回前台时重置`animator`。
+    /// - 解决方案：返回前台时重置`animator`
     ///
-    /// `iOS11之后`：设置`animator.pausesOnCompletion = true`，`animator`不会失效。
+    /// `iOS11之后`
+    /// - 设置`animator.pausesOnCompletion = true`，App进入后台模式`animator`也不会失效
     /// - `state`保持为`active`
-    /// - 不再需要重置`animator`。
+    /// - 不再需要重置`animator`
     ///
     @objc func willEnterForegroundHandle() {
         guard animator.state != .active else { return }
