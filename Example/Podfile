@@ -6,6 +6,7 @@ target 'Example' do
   use_frameworks!
   
   pod 'JPBlurView', :path => '../'
+  pod 'LookinServer', :configurations => ['Debug']
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
