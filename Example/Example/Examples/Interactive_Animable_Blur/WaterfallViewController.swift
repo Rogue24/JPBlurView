@@ -101,7 +101,7 @@ extension WaterfallViewController: WaterfallLayoutDelegate {
     func rowMarginInWaterFlowLayout(_ waterfallLayout: WaterfallLayout) -> CGFloat { 5 }
     
     func edgeInsetsInWaterFlowLayout(_ waterfallLayout: WaterfallLayout) -> UIEdgeInsets {
-        var safeAreaInsets: UIEdgeInsets = UIApplication.shared.keyWindow?.safeAreaInsets ?? .zero
+        var safeAreaInsets: UIEdgeInsets = UIApplication.shared.delegate?.window??.safeAreaInsets ?? .zero
         safeAreaInsets.top += 44 + 5
         safeAreaInsets.left += 5
         safeAreaInsets.bottom += 5
