@@ -10,7 +10,18 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow? {
+        set {}
+        get {
+            guard let scene = UIApplication.shared.connectedScenes.first,
+                  let windowSceneDelegate = scene.delegate as? UIWindowSceneDelegate,
+                  let window = windowSceneDelegate.window
+            else {
+                return nil
+            }
+            return window
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

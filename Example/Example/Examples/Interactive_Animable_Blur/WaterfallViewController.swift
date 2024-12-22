@@ -8,7 +8,7 @@
 import UIKit
 
 class WaterfallViewController: UIViewController {
-    lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let waterfallLayout = WaterfallLayout()
         waterfallLayout.delegate = self
         waterfallLayout.asyncUpdateLayout(itemTotal: models.count) { [weak self] index, itemWidth in
@@ -37,9 +37,9 @@ class WaterfallViewController: UIViewController {
         return collectionView
     }()
     
-    var isAppear: Bool = false
+    private var isAppear: Bool = false
     
-    var models: [WaterfallModel] = []
+    private var models: [WaterfallModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,9 +103,9 @@ extension WaterfallViewController: WaterfallLayoutDelegate {
     func edgeInsetsInWaterFlowLayout(_ waterfallLayout: WaterfallLayout) -> UIEdgeInsets {
         var safeAreaInsets: UIEdgeInsets = UIApplication.shared.delegate?.window??.safeAreaInsets ?? .zero
         safeAreaInsets.top += 44 + 5
-        safeAreaInsets.left += 5
+        safeAreaInsets.left += 10
         safeAreaInsets.bottom += 5
-        safeAreaInsets.right += 5
+        safeAreaInsets.right += 10
         return safeAreaInsets
     }
 }

@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class WaterfallCell: UICollectionViewCell {
-    static let maxWidth = (UIScreen.main.bounds.width - 15) / 3
+    static let maxWidth = (UIScreen.main.bounds.width - 10 - 5 - 5 - 10) / 3
+    
     let imgView = UIImageView()
     
     var model: WaterfallModel? {
@@ -26,12 +28,9 @@ class WaterfallCell: UICollectionViewCell {
         
         imgView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(imgView)
-        NSLayoutConstraint.activate([
-            imgView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imgView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            imgView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imgView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        ])
+        imgView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     required init?(coder: NSCoder) {

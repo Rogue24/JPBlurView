@@ -8,6 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+//    enum Section {
+//        case customBlur
+//        case interactive
+//        case useInList
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Examples"
@@ -32,7 +38,8 @@ extension ViewController: UITableViewDelegate {
         
         let vc = indexPath.row == 0 ?
             storyboard!.instantiateViewController(withIdentifier: "CustomBlurViewController") :
-            WaterfallViewController()
+//            WaterfallViewController()
+        CustomBlurListViewController()
         
         navigationController?.pushViewController(vc, animated: true)
     }

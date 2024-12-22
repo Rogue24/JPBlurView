@@ -7,12 +7,13 @@
 
 import UIKit
 import JPBlurView
+import SnapKit
 
 class CustomBlurViewController: UIViewController {
-    let blurView = JPBlurAnimationView(effectStyle: .systemThinMaterialDark, intensity: 0)
+    private let blurView = JPBlurAnimationView(effectStyle: .systemThinMaterialDark, intensity: 0)
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var slider: UISlider!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var slider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,9 @@ class CustomBlurViewController: UIViewController {
         
         blurView.translatesAutoresizingMaskIntoConstraints = false
         view.insertSubview(blurView, aboveSubview: imageView)
-        NSLayoutConstraint.activate([
-            blurView.topAnchor.constraint(equalTo: view.topAnchor),
-            blurView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            blurView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            blurView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
+        blurView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
