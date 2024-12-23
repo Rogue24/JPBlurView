@@ -43,6 +43,8 @@ DispatchQueue.main.async {
 }
 ```
 
+![JPBlurView_1.gif](https://github.com/Rogue24/JPCover/raw/master/JPBlurView/JPBlurView_2.gif)
+
 - refer to the `CustomBlurCell` in the demo for specific reset operations.
 
 `JPBlurView` allows complete customization of the blur intensity and addresses the issue of becoming ineffective when entering the background mode. If you want to modify the blur intensity with animation effects, you can use `JPBlurAnimationView`.

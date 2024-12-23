@@ -18,7 +18,7 @@ class CustomBlurListViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
         label.textAlignment = .left
-        label.textColor = .darkText
+        label.textColor = .label
         label.numberOfLines = 0
         
         if let language = Locale.preferredLanguages.first, language.hasPrefix("zh") {
