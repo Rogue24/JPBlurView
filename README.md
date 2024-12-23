@@ -31,6 +31,20 @@ blurView.intensity = 0.5
 - The `intensity` has a default initial value of 1, but you can pass a custom value to it in the constructor method.
 - The `intensity` property ranges from 0 to 1, representing 0% to 100% blur intensity.
 
+**Note:** If you use `JPBlurView` in a `UITableViewCell` or `UICollectionViewCell`, the blur effect may become unstable (e.g., the frosted glass effect may disappear during repeated scrolling).  
+- After debugging, it was found that Apple's reuse mechanism causes `UIViewPropertyAnimator` to become invalid directly.  
+
+A perfect solution has not been found yet. Currently, a method called `resetEffect` is provided to reset the blur effect. You can call this method when reusing cells:
+
+```swift
+// The reset must be performed in the next runloop
+DispatchQueue.main.async {
+    self.blurView.resetEffect()
+}
+```
+
+- refer to the `CustomBlurCell` in the demo for specific reset operations.
+
 `JPBlurView` allows complete customization of the blur intensity and addresses the issue of becoming ineffective when entering the background mode. If you want to modify the blur intensity with animation effects, you can use `JPBlurAnimationView`.
 
 ## JPBlurAnimationView

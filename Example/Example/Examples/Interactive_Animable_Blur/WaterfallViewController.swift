@@ -43,7 +43,7 @@ class WaterfallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Interactive & Animable Blur"
+        title = Example.interactiveBlur.title
         view.backgroundColor = .systemGroupedBackground
         view.insertSubview(collectionView, at: 0)
         

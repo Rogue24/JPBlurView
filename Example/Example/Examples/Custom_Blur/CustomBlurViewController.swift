@@ -17,7 +17,7 @@ class CustomBlurViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Custom Blur"
+        title = Example.customBlur.title
         
         imageView.image = UIImage.randomGirlImage
         

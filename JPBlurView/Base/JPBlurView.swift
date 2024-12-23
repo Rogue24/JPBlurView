@@ -27,6 +27,9 @@ public class JPBlurView: UIView {
     }
     
     /// 重置模糊效果
+    /// - Parameters:
+    ///   - intensity: 重置的模糊度，取值范围[0, 1]，默认为`nil`，表示不改变当前模糊度
+    /// - Note: 在某些特定的场景，例如App前后台切换和`UITableViewCell/UICollectionViewCell`的复用，`UIViewPropertyAnimator`会直接失效。其中App前后台切换已内部处理，其他情况内部无法完全解决，为此提供该方法给外部调用。
     public func resetEffect(_ intensity: CGFloat? = nil) {
         if let animator {
             animator.stopAnimation(true)
@@ -70,7 +73,6 @@ public class JPBlurView: UIView {
         NotificationCenter.default.removeObserver(self)
         // 📢 如果有【没有开启】或【还没结束】的动画，必须在退出页面时让动画结束，否则会崩溃！
         animator?.stopAnimation(true)
-//        print("BlurView deinit")
     }
 }
 

@@ -98,14 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00445AB22D1863C600FD2EC1 /* List_Custom_Blur */ = {
+		00445AB22D1863C600FD2EC1 /* Custom_Blur_List */ = {
 			isa = PBXGroup;
 			children = (
 				00445AB32D18655600FD2EC1 /* CustomBlurListViewController.swift */,
 				00445AB52D18662C00FD2EC1 /* CustomBlurCell.swift */,
 				00445AB72D18663C00FD2EC1 /* CustomBlurModel.swift */,
 			);
-			path = List_Custom_Blur;
+			path = Custom_Blur_List;
 			sourceTree = "<group>";
 		};
 		1A34C6502A2CBEE300757CF9 = {
@@ -149,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				1A34C6792A2CBF4900757CF9 /* Custom_Blur */,
+				00445AB22D1863C600FD2EC1 /* Custom_Blur_List */,
 				1A34C6722A2CBF4900757CF9 /* Interactive_Animable_Blur */,
-				00445AB22D1863C600FD2EC1 /* List_Custom_Blur */,
 			);
 			path = Examples;
 			sourceTree = "<group>";

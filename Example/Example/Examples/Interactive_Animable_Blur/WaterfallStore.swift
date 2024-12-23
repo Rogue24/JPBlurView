@@ -26,13 +26,14 @@ enum WaterfallStore {
         let group = DispatchGroup()
         let locker = DispatchSemaphore(value: 1)
         let maxWidth = WaterfallCell.maxWidth
+        let scale = UIScreen.main.scale
         
         for i in 1...16 {
             DispatchQueue.global().async(group: group) {
                 let image = UIImage.girlImage(i)
                 
                 let cellSize = CGSize(width: maxWidth, height: (image.size.height / image.size.width) * maxWidth)
-                let resize = CGSize(width: cellSize.width * 2, height: cellSize.height * 2)
+                let resize = CGSize(width: cellSize.width * scale, height: cellSize.height * scale)
                 
                 guard let decodeImg = UIImage.decodeImage(image, resize: resize) else { return }
                 let model = WaterfallModel(image: decodeImg,
