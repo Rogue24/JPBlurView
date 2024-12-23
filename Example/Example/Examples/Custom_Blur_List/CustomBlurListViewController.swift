@@ -138,12 +138,13 @@ private extension CustomBlurListViewController {
     func loadData() {
         let group = DispatchGroup()
         let locker = DispatchSemaphore(value: 1)
+        
+        let width = Self.cellSize.width * 2//UIScreen.main.scale
         var models: [CustomBlurModel] = []
         
         for _ in 0..<30 {
             DispatchQueue.global().async(group: group) {
                 let image = UIImage.girlImage(Int.random(in: 1...16))
-                let width = Self.cellSize.width * UIScreen.main.scale
                 let height = width * image.size.height / image.size.width
                 let resize = CGSize(width: width, height: height)
                 

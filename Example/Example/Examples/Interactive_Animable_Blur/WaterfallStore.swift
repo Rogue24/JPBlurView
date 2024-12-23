@@ -25,8 +25,9 @@ enum WaterfallStore {
         
         let group = DispatchGroup()
         let locker = DispatchSemaphore(value: 1)
+        
         let maxWidth = WaterfallCell.maxWidth
-        let scale = UIScreen.main.scale
+        let scale: CGFloat = 2//UIScreen.main.scale
         
         for i in 1...16 {
             DispatchQueue.global().async(group: group) {
